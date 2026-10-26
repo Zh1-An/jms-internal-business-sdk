@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jms-internal-business"
+version = "0.9.4"
+description = "JMS-Internal-Business internal business domain SDK"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "httpx>=0.24,<0.28",
+    "pydantic>=1.10,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "mypy>=1.6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.jms]
+registry = "https://registry.jms-internal.example.com"
+group = "JMS-Internal-Business"
+owner_team = "data-platform"
